@@ -6,10 +6,10 @@ var submitBtn = document.querySelector("#btn");
 
 // ----- Check & Add & Save Sites -----
 var sitesList;
-var names;
+var names = [];
 if (localStorage.getItem("sites") == null) {
   sitesList = [];
-  names = [];
+  
 } else {
   sitesList = JSON.parse(localStorage.getItem("sites"));
   names = JSON.parse(localStorage.getItem("names"));
