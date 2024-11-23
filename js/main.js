@@ -67,7 +67,7 @@ function display() {
 
 function resetInputs() {
   for (let i = 0; i < inputs.length; i++) {
-    inputs[i].value == null;
+    inputs[i].value = null;
     inputs[i].classList.remove("is-valid");
     inputs[i].classList.remove("is-invalid");
     inputs[i].nextElementSibling.classList.replace("d-block", "d-none");
