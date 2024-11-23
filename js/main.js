@@ -6,27 +6,39 @@ var submitBtn = document.querySelector("#btn");
 
 // ----- Check & Add & Save Sites -----
 var sitesList;
+var names;
 if (localStorage.getItem("sites") == null) {
   sitesList = [];
+  names = [];
 } else {
   sitesList = JSON.parse(localStorage.getItem("sites"));
+  names = JSON.parse(localStorage.getItem("names"));
   display();
 }
-var names = [];
+
+function namesArr() {
+   names = []
+  for (let i = 0; i < sitesList.length; i++) {
+    names.push(sitesList[i].name);
+  }
+  localStorage.setItem("names", JSON.stringify(names));
+}
+
 function addSite() {
   if (
     bookmarkNameInput.classList.contains("is-valid") &&
     bookmarkURLInput.classList.contains("is-valid")
   ) {
+    
     if (names.length == 0 || !names.includes(bookmarkNameInput.value)) {
       var site = {
         name: bookmarkNameInput.value,
         url: bookmarkURLInput.value,
       };
       sitesList.push(site);
-      names.push(bookmarkNameInput.value);
       localStorage.setItem("sites", JSON.stringify(sitesList));
       display();
+      namesArr();
       resetInputs();
     } else {
       if (names.includes(bookmarkNameInput.value)) {

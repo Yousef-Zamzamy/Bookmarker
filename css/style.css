@@ -26,7 +26,7 @@ body {
     position: absolute;
     bottom: 15px;
     height: 20px;
-    background-color: #f48244;
+    background-color: #fec260;
     z-index: -1;
     transition: all 0.3s;
   }
