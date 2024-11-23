@@ -94,7 +94,9 @@ submitBtn.addEventListener("click", () => {
 // ----- delete Btn -----
 function deleteSite(deletedsiteIndex) {
   sitesList.splice(deletedsiteIndex, 1);
+  names.splice(deletedsiteIndex, 1);
   localStorage.setItem("sites", JSON.stringify(sitesList));
+  localStorage.setItem("names", JSON.stringify(names));
   display();
   resetInputs();
 }
