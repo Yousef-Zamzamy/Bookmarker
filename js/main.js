@@ -6,7 +6,7 @@ var submitBtn = document.querySelector("#btn");
 
 // ----- Check & Add & Save Sites -----
 var sitesList;
-var names = [];
+var names;
 if (localStorage.getItem("sites") == null) {
   sitesList = [];
   
@@ -25,6 +25,7 @@ function namesArr() {
 }
 
 function addSite() {
+  names = JSON.parse(localStorage.getItem("names"));
   console.log(names);
   if (
     bookmarkNameInput.classList.contains("is-valid") &&
