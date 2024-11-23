@@ -25,6 +25,7 @@ function namesArr() {
 }
 
 function addSite() {
+  console.log(names);
   if (
     bookmarkNameInput.classList.contains("is-valid") &&
     bookmarkURLInput.classList.contains("is-valid")
