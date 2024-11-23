@@ -9,7 +9,7 @@ var sitesList;
 var names;
 if (localStorage.getItem("sites") == null) {
   sitesList = [];
-  
+  names = [];
 } else {
   sitesList = JSON.parse(localStorage.getItem("sites"));
   names = JSON.parse(localStorage.getItem("names"));
@@ -25,7 +25,6 @@ function namesArr() {
 }
 
 function addSite() {
-  names = JSON.parse(localStorage.getItem("names"));
   console.log(names);
   if (
     bookmarkNameInput.classList.contains("is-valid") &&
